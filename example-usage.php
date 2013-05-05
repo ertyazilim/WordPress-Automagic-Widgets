@@ -40,7 +40,7 @@ class My_Theme_Sidebars {
 						),
 						# Add a text widget to my blog sidebar
 						array( 
-							"sidebar" => "homepage_blog",
+							"sidebar" => "blog_sidebar",
 							"widget" => "search",
 							"args" => array( "title" => "Search blog" )
 						)
