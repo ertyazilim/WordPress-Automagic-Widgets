@@ -17,3 +17,5 @@ when a theme called My_Theme_Name is activated. 1 text widget to a sidebar calle
 and 1 search widget to a sidebar called blog_sidebar.
 
 Note that you can also use your own custom widgets by using their widget_id.
+
+This code is in pre alpha so use at your own risk
