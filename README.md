@@ -13,3 +13,7 @@ Check out example-usage.php to see how it can be implemented. In this example 2 
 Note that you can also use your own custom widgets by using their widget_id.
 
 This code is in beta so use at your own risk.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/superinteractive/wordpress-automagic-widgets/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
