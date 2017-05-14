@@ -65,7 +65,9 @@ class SI_Automagic_Widgets {
 		$sidebar = $this->sidebar_options[$sidebar_id];
 
 		# Get the iteration of the specified widget and add 1 for ours
-		$count = $this->widgets[$widget_id] + 1;
+		if(!isset($this->widgets[$sidebar_id][$widget_id]))
+			$this->widgets[$sidebar_id][$widget_id] = 0;
+		$count = $this->widgets[$sidebar_id][$widget_id] + 1;
 
 		# Add the widget to the specified sidebars widget list
 		$sidebar[] = "$widget_id-$count";
@@ -106,12 +108,14 @@ class SI_Automagic_Widgets {
  					foreach( $sidebar_widgets as $widget ) {
 
  						# Get widget name and count
- 						list($name, $count) = preg_split('/-+(?=\S+$)/', $widget);
-
+ 						$count_arr = explode('-', $widget);
+						$count = (int) end($count_arr);
+						$name = _get_widget_id_base( $widget);
+ 						//list($name, $count) = preg_split('/-+(?=\S+$)/', $widget);
  						# Set the current widget type count
- 						if( !isset( $this->widgets[$name] ) || $count > $this->widgets[$name] ) {
- 							$this->widgets[$name] = $count;
- 						}
+ 						if( !isset( $this->widgets[$sidebar_id][$name]) || $count > $this->widgets[$sidebar_id][$name] ) {
+ 							$this->widgets[$sidebar_id][$name] = $count;
+						}
  					}
  				}
  			}
